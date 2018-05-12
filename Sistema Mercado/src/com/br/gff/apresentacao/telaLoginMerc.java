@@ -102,6 +102,7 @@ public class telaLoginMerc extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String cmd = e.getActionCommand();
+		JFrame tela = null;
 		if(rdbtnOperacional.isSelected()) {
 			pnlSenha.setVisible(false);
 		}else {
@@ -109,13 +110,13 @@ public class telaLoginMerc extends JFrame implements ActionListener{
 		}
 		if(cmd.equals("ok")) {
 			if(rdbtnOperacional.isSelected()) {
-				//TODO implementar tela de cadastro de entrada ou saída de produto
-				System.out.println("a");
+				tela = new TelaCadastroMerc();
 			}else {
 				//TODO implementar tela de opções de gerência
 				String senha = new String (psfSenha.getPassword());
-				System.out.println(senha);
 			}
+			tela.setVisible(true);
+			this.dispose();
 		}
 	}
 
